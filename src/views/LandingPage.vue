@@ -4,10 +4,10 @@
       <v-app-bar v-cloak app clipped-left short dense color="secondary">
         <v-toolbar-title>{{ $t('page.landingPage.title') }}</v-toolbar-title>
         <v-spacer></v-spacer>
-        <v-btn class="mr-4" active-class="v-btn--active" color="accent" to="main">
+        <v-btn class="mr-4" active-class="v-btn--active" color="accent" href="https://nexus-app.unterrainer.info">
           sign up
         </v-btn>
-        <v-btn active-class="v-btn--active" color="accent" to="main">
+        <v-btn active-class="v-btn--active" color="accent" href="https://nexus-app.unterrainer.info">
           <v-icon color="white" class="mr-2">play_circle_outline</v-icon>
           log in
         </v-btn>

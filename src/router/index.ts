@@ -9,26 +9,10 @@ const routes: Array<RouteConfig> = [
     redirect: '/app/landingpage'
   },
   {
-    path: '/app/main',
-    alias: '/',
-    name: 'main',
-    component: () => import('../views/Main.vue')
-  },
-  {
     path: '/app/landingpage',
     alias: '/',
     name: 'landingpage',
     component: () => import('../views/LandingPage.vue')
-  },
-  {
-    path: '/settings/preferences',
-    name: 'preferences',
-    component: () => import('../views/Preferences.vue')
-  },
-  {
-    path: '/settings/about',
-    name: 'about',
-    component: () => import('../views/About.vue')
   },
   {
     path: '/*',

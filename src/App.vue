@@ -24,8 +24,6 @@ export default {
   name: 'Main',
 
   components: {
-    NavDrawer,
-    AppBarMenu,
     ModalLoading,
     Snackbar
   },
@@ -45,14 +43,6 @@ export default {
       },
       set (value) {
         this.localeBackingField = value
-      }
-    },
-    twoWayDrawerVisible: {
-      get () {
-        return this.$store.state.gui.drawerVisible
-      },
-      set (value) {
-        this.$store.dispatch('gui/drawerVisible', { value, time: 0 })
       }
     },
     ...mapGetters({
