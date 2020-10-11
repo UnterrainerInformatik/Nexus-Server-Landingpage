@@ -1,0 +1,27 @@
+version: "3"
+services:
+  web:
+    image: gufalcon/nexus-server-landingpage:latest
+    restart: always
+    depends_on:
+      - keycloak
+    ports:
+      - "1480:80"
+      - "14443:443"
+    environment:
+      - HTTP_PORT=80
+      - HTTP_HOST=0.0.0.0
+    volumes:
+      - "/app/deploy/nexus-server-landingpage/nginx.conf:/etc/nginx/nginx.conf"
+    command: ["nginx", "-g", "daemon off;"]
+    labels:
+      - "traefik.enable=true"
+      - "traefik.nexus-landingpage.port=80"
+      - "traefik.nexus-landingpage.backend=nexus-landingpage"
+      - "traefik.nexus-landingpage.frontend.rule=Host:nexus.unterrainer.info"
+      - "traefik.nexus-landingpage.frontend.entryPoints=http,https"
+
+networks:
+  default:
+    external:
+      name: proxy_default
