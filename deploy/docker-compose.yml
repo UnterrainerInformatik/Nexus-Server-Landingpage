@@ -3,8 +3,6 @@ services:
   web:
     image: gufalcon/nexus-server-landingpage:latest
     restart: always
-    depends_on:
-      - keycloak
     ports:
       - "1480:80"
       - "14443:443"
